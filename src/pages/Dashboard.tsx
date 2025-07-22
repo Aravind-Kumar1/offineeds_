@@ -18,7 +18,8 @@ import {
   BookOpen,
   ArrowUpRight,
   ArrowDownRight,
-  Send
+  Send,
+  DollarSign
 } from "lucide-react";
 import { useAuthStore } from '@/store/authStore';
 import { supabase } from '@/lib/supabaseClient';
@@ -256,7 +257,7 @@ export default function Dashboard() {
         </div>
       ) : (
         <>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 grid-cols-3 w-full">
             <MetricCard
               title="Production"
               value={totalProductionRecords}
@@ -444,7 +445,7 @@ export default function Dashboard() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 grid-cols-6 w-full">
                 <Button 
                   onClick={() => navigate('/job-cards')} 
                   className="h-24 flex flex-col bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -490,19 +491,6 @@ export default function Dashboard() {
               </div>
             </CardContent>
           </Card>
-          {/* Add a Shipments card just below the hero text */}
-          <div className="w-full mb-4">
-            <Card className="shadow-lg rounded-lg cursor-pointer hover:shadow-xl transition-all duration-200" onClick={() => navigate('/job-cards')}>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Shipments</CardTitle>
-                <Package className="h-4 w-4 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-xl sm:text-2xl font-bold">{Math.floor(Math.random() * 100) + 20}</div>
-                <p className="text-xs text-muted-foreground">Total Shipments</p>
-              </CardContent>
-            </Card>
-          </div>
         </>
       )}
     </div>

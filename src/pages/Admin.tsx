@@ -546,13 +546,19 @@ const Admin = () => {
             <div className="flex justify-end gap-2 mt-6">
               <Button variant="outline" onClick={() => setShowCreateDialog(false)}>Cancel</Button>
               <Button onClick={() => {
-                // Create a new user object from userForm
+                // Create a new user object from userForm, ensuring role matches UserRole type
+                const roleObj = dynamicRoles.find(r => r.Role_ID === userForm.roleId);
                 const newUser = {
                   id: `user-${Date.now()}`,
                   name: userForm.name,
                   email: userForm.email,
                   Employee_ID: userForm.Employee_ID,
-                  role: dynamicRoles.find(r => r.Role_ID === userForm.roleId) || dynamicRoles[2],
+                  role: {
+                    Role_ID: userForm.roleId,
+                    Role_Name: roleObj?.Role_Name || 'User',
+                    Role_Description: '', // default or empty
+                    Is_Active: true,      // default to true
+                  },
                   modules: userForm.modules.map(moduleName => ({
                     module: { Module_ID: moduleName, module_name: moduleName },
                     access_level: userForm.accessLevel

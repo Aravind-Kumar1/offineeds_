@@ -100,6 +100,7 @@ export function Sidebar() {
           "transition-all duration-200 shadow-lg",
           !isCollapsed && "opacity-0 pointer-events-none"
         )}
+        style={{ marginRight: 56 }} // Add margin to prevent overlap
       >
         <Menu className="h-4 w-4" />
       </Button>
@@ -135,18 +136,18 @@ export function Sidebar() {
         )}
       >
         <div className="flex h-full flex-col">
-          {/* Sidebar header: OMS Dashboard text should be immediately below the logo, no gap from the top. */}
-          <div className="flex flex-col items-center border-b-2 border-gray-200/50 flex-shrink-0 bg-white" style={{paddingTop: 0, paddingBottom: 8}}>
-            <div className="w-32 h-24 rounded-xl flex items-center justify-center overflow-hidden bg-white" style={{marginTop: 0, marginBottom: 0}}>
+          {/* Sidebar header: decrease logo height, increase width, ensure all tags are properly closed. */}
+          <div className="flex flex-col items-center border-b-2 border-gray-200/50 flex-shrink-0 bg-white">
+            <div className="w-40 h-16 rounded-xl flex items-center justify-center overflow-hidden bg-white">
               <img 
                 src="/logo.png" 
                 alt="OffiNeeds Logo" 
-                className="w-full h-24 object-contain"
+                className="w-full h-16 object-contain"
               />
             </div>
-            <h1 className="text-base font-bold text-black" style={{marginTop: 0, paddingTop: 0}}>OMS Dashboard</h1>
+            <h1 className="text-base font-bold text-black mb-4" style={{marginTop: 0, paddingTop: 0}}>OMS Dashboard</h1>
           </div>
-          <nav className="flex-1 p-4 space-y-3 overflow-y-auto">
+          <nav className="flex-1 p-4 space-y-3 overflow-y-auto mt-4">
             {sidebarOrder.map((componentName) => {
               const item = navigationItems[componentName as keyof typeof navigationItems];
               if (!item) return null;
