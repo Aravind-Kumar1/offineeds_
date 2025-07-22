@@ -447,7 +447,7 @@ export default function JobCards() {
       <motion.div variants={itemVariants}>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
           <div>
-            <h1 className="text-3xl font-bold text-black">Job Cards</h1>
+            <h1 className="text-3xl font-bold text-black mt-16 sm:mt-0">Job Cards</h1>
             <p className="text-gray-600 mt-2 text-lg">Manage and track production job cards efficiently</p>
           </div>
         </div>

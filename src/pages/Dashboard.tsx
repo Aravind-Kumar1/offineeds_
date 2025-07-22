@@ -228,7 +228,7 @@ export default function Dashboard() {
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold mb-2">Welcome back!</h1>
+              <h1 className="text-xl sm:text-3xl font-bold tracking-tight mt-16 sm:mt-0">Dashboard</h1>
               <p className="text-blue-100 text-lg">Here's what's happening with your OMS today</p>
             </div>
             <div className="hidden md:flex items-center space-x-2">

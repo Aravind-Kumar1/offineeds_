@@ -262,7 +262,7 @@ const ProductLibrary = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
         <div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-700 bg-clip-text text-transparent">Product Library</h1>
+          <h1 className="text-3xl font-bold text-black mt-16 sm:mt-0">Product Library</h1>
           <p className="text-gray-600 mt-2 text-lg">
             Browse and manage your product library
           </p>
